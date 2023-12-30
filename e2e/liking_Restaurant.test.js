@@ -6,12 +6,12 @@ Before(({ I }) => {
   I.amOnPage('/#/favorite');
 });
 
-Scenario('menunjukan restoran favorit kosong', ({ I }) => {
+Scenario('Menunjukan restoran favorit kosong', ({ I }) => {
   I.seeElement('#explore-restaurant-list');
   I.see('Tidak ada restoran favorit', '.restaurant-item__not__found');
 });
 
-Scenario('menyukai satu restoran', async ({ I }) => {
+Scenario('Menyukai satu restoran', async ({ I }) => {
   I.see('Tidak ada restoran favorit', '.restaurant-item__not__found');
 
   I.amOnPage('/');

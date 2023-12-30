@@ -16,13 +16,13 @@ describe('Unliking A Restaurant', () => {
     await FavoriteRestaurantIdb.deleteRestaurant(1);
   });
 
-  it('should display unlike widget when the restaurant has been liked', async () => {
+  it('Seharusnya menampilkan widget batal suka ketika restoran sudah disukai', async () => {
     await TesFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
     expect(document.querySelector('[aria-label="unlike this restaurant"]')).toBeTruthy();
   });
 
-  it('should not display like widget when the restaurant has been liked', async () => {
+  it('Seharusnya tidak menampilkan widget suka ketika restoran sudah disukai', async () => {
     await TesFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
     expect(document.querySelector('[aria-label="like this restaurant"]')).toBeFalsy();
@@ -36,7 +36,7 @@ describe('Unliking A Restaurant', () => {
     expect(await FavoriteRestaurantIdb.getAllRestaurant()).toEqual([]);
   });
 
-  it('should not throw error if the unliked restaurant is not in the list', async () => {
+  it('Seharusnya mengeluarkan error ketika restoran yang batal suka tidak ada dalam daftar', async () => {
     await TesFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
     await FavoriteRestaurantIdb.deleteRestaurant(1);
