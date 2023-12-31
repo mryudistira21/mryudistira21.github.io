@@ -4,7 +4,7 @@ const createRestaurantItemTemplate = (restaurant) => `
     <article tabindex="0" class="card">
         <div class="card-img-container">
             <img class="card-image lazyload" data-src="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}" alt="${restaurant.name}"/>
-            <span class="card-rating">
+            <span class="card-rating" crossorigin="anonymous" >
                 <i title="ratings" class="fa fa-star"></i>
                 <span>${restaurant.rating}</span>
             </span>
@@ -29,7 +29,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
                     <source class="detail-img lazyload" srcset="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}" type="image/jpeg" media="all and (min-width: 700px) and (max-width: 900px)" />
                     <source class="detail-img lazyload" srcset="${CONFIG.BASE_IMAGE_LARGE_URL + restaurant.pictureId}" type="image/webp" media="all and (min-width: 901px)" />        
                     <source class="detail-img lazyload" srcset="${CONFIG.BASE_IMAGE_LARGE_URL + restaurant.pictureId}" type="image/jpeg" media="all and (min-width: 901px)" />
-                    <img class="detail-img lazyload" src="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}" alt="${restaurant.name}"/>
+                    <img class="detail-img lazyload" src="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}" alt="${restaurant.name}" crossorigin="anonymous" />
                 </picture>
             </div>
 
